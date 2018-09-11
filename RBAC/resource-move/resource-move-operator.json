@@ -1,0 +1,16 @@
+{
+  "Name": "Resource Move Operator",
+  "Id": null,
+  "IsCustom": true,
+  "Description": "Allow resource move operations between subscriptions in the same Azure Active Directory",
+  "Actions": [
+    "Microsoft.Resources/subscriptions/resourceGroups/moveResources/action",
+    "Microsoft.Resources/subscriptions/resourceGroups/write"
+  ],
+  "NotActions": [
+  ],
+  "AssignableScopes": [
+    "/subscriptions/00000000-0000-0000-0000-000000000000",
+    "/subscriptions/11111111-1111-1111-1111-111111111111"
+  ]
+}
