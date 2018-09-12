@@ -1,7 +1,6 @@
 # Scripts
 # Sumário
  - [Como usar este repositório](#como-usar-este-repositorio)
- - []()
 
 O intuito deste repositório é agrupar scripts de automação independente da linguagem criada. 
 
