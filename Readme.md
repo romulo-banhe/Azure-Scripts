@@ -6,7 +6,8 @@
 O intuito deste repositório é agrupar scripts de automação independente da linguagem criada. 
 
 ## Como usar este repositório
-**Crie uma branch**. Isso vai facilitar a vida de todo mundo e a gente pode trabalhar de um jeito muito mais fácil. Sem contar que você tem a oportunidade de testar os scripts antes de rodar tudo.
+Vai adicionar um novo script, ou quer testar algo que encontrou? **Crie uma branch**. Isso porque, criando uma branch você não perde do que já existe no *master* e se der algum problema é só não continuar. Então, já sabe, se for criar algo, cria uma branch primeiro. 
+Outra coisa: use nomes fáceis por exemplo powershell/office365 ou teste/fulano porque desta forma, novamente, fica muito mais organizado. 
 
 ----------
 
