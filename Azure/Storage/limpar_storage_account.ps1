@@ -1,3 +1,4 @@
+#função retirada de https://stackoverflow.com/questions/33381650/how-to-list-azure-storage-containers-and-blobs
 function Get-StorageContainer
 {
     param
