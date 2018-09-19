@@ -1,0 +1,19 @@
+{
+    "Name": "Network Peering operator",
+    "Id": null,
+    "IsCustom": true,
+    "Description": "Allow network peering between virtual networks in a same Directory",
+    "Actions": [
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/write",
+      "Microsoft.Network/virtualNetworks/peer/action",
+      "Microsoft.ClassicNetwork/virtualNetworks/peer",
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/read",
+      "Microsoft.Network/virtualNetworks/virtualNetworkPeerings/delete"
+    ],
+    "NotActions": [
+    ],
+    "AssignableScopes": [
+      "/subscriptions/00000000-0000-0000-0000-000000000000",
+      "/subscriptions/11111111-1111-1111-1111-111111111111"
+    ]
+  }
