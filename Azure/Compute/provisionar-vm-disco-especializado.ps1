@@ -1,3 +1,0 @@
-Login-AzureRmAccount
-Get-AzureRmSubscription
-Get-AzureRmStorageAccount
