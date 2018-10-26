@@ -29,7 +29,7 @@ catch {
     }
 }
 
-$VMs = Get-AzureRMVm | Where {$_.Tags.Keys -eq "stophour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "stopsabhour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "stopdomhour" -and $_.Tags.Values -eq $hour} | Select Name, ResourceGroupName, Tags
+$VMs = Get-AzureRMVm | Where {$_.Tags.Keys -eq "stophour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "stopsabhour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "stopdomhour" -and $_.Tags.Values -eq $hour}
 ForEach ($VM in $VMs)
 {
     $VMStatus = get-azurermvm -name $Vm.name -Resourcegroupname $vm.resourcegroupname -status
@@ -39,12 +39,14 @@ ForEach ($VM in $VMs)
     }
     $osdisk = $vm.storageprofile.osdisk.name
     $diskUpdateConfig = New-AzureRmDiskUpdateConfig -AccountType $storageType 
+    Write-Output "Converting: $($osdisk) to $($storageType)"
     Update-AzureRmDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $vm.ResourceGroupName `
     -DiskName $osdisk
 
     $datadisks = $vm.StorageProfile.DataDisks
     foreach ($disk in $datadisks){
         $diskUpdateConfig = New-AzureRmDiskUpdateConfig -AccountType $storageType 
+        Write-Output "Converting: $($disk.Name) to $($storageType)"
         Update-AzureRmDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $vm.ResourceGroupName `
         -DiskName $disk.Name
     }
