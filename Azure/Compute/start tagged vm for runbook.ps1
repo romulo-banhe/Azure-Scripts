@@ -2,6 +2,7 @@ param(
     [Parameter(Mandatory=$true)]
     [string] $hour
 )
+$storageType = 'Premium_LRS'  # Premium_LRS, StandardSSD_LRS, Standard_LRS
 
 $connectionName = "AzureRunAsConnection" 
 try
@@ -31,6 +32,17 @@ catch {
 $VMs = Get-AzureRMVm | Where {$_.Tags.Keys -eq "starthour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "startsabhour" -and $_.Tags.Values -eq $hour -or $_.Tags.Keys -eq "startdomhour" -and $_.Tags.Values -eq $hour} | Select Name, ResourceGroupName, Tags
 ForEach ($VM in $VMs)
 {
+    $osdisk = $vm.storageprofile.osdisk.name
+    $diskUpdateConfig = New-AzureRmDiskUpdateConfig -AccountType $storageType 
+    Update-AzureRmDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $vm.ResourceGroupName `
+    -DiskName $osdisk
+
+    $datadisks = $vm.StorageProfile.DataDisks
+    foreach ($disk in $datadisks){
+        $diskUpdateConfig = New-AzureRmDiskUpdateConfig -AccountType $storageType 
+        Update-AzureRmDisk -DiskUpdate $diskUpdateConfig -ResourceGroupName $vm.ResourceGroupName `
+        -DiskName $disk.Name
+    }
     $VMStatus = get-azurermvm -name $Vm.name -Resourcegroupname $vm.resourcegroupname -status
     If ($VMstatus.Statuses[1].DisplayStatus = "VM deallocated"){
         Write-Output "Starting: $($VM.Name)"
