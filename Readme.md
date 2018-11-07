@@ -1,15 +1,17 @@
 # Scripts
-# Sumário
- - [Como usar este repositório](#como-usar-este-repositorio)
+## Sumário
+ - [Como usar este repositório](#como-usar-este-repositório)
+ - [Contato](#Contato)
+----
 
 O intuito deste repositório é agrupar scripts de automação independente da linguagem criada. 
 
-## Como usar este repositório
-Vai adicionar um novo script, ou quer testar algo que encontrou? **Crie uma branch**. Isso porque, criando uma branch você não perde do que já existe no *master* e se der algum problema é só não continuar. Então, já sabe, se for criar algo, cria uma branch primeiro. 
-Outra coisa: use nomes fáceis por exemplo powershell/office365 ou teste/fulano porque desta forma, novamente, fica muito mais organizado. 
+### Como usar este repositório
+Vai adicionar um novo script, ou quer testar algo que encontrou? **Crie uma branch**. Você não perde o que já existe no *master* e se der algum problema é só não continuar. 
+
+_Dica_: use nomes fáceis para identificar sua branch, por exemplo: powershell/office365 ou teste/fulano porque desta forma, fica muito mais organizado e fácil na hora de trabalhar. 
 
 ----------
-
+### Contato
 Tem alguma dica de como melhorar este repositório? Me manda um oi!
 [carlos.oliveira@softwareone.com](mailto:carlos.oliveira@softwareone.com)
-
